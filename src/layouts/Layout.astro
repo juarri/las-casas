@@ -1,7 +1,7 @@
 ---
 import { SEO } from "astro-seo";
+import Header from "@components/header/header.astro";
 import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 
 export interface Props {
@@ -26,8 +26,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "Las Casas"
+  : "Las Casas - Rental Homes";
 ---
 
 <!DOCTYPE html>
@@ -43,26 +43,21 @@ const makeTitle = title
       title={makeTitle}
       description="Astroship is a starter website template for Astro built with TailwindCSS."
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Las Casas - Rental Homes`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Las Casas Homepage Screenshot",
         },
       }}
     />
   </head>
   <body>
-    <Navbar />
+    <Header />
     <slot />
     <Footer />
     <style is:global>

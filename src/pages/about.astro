@@ -19,16 +19,36 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
+      <h2 class="font-bold text-3xl text-gray-800">Mission Statement</h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Our mission is to provide safe, comfortable, and affordable short-term
+        rental accommodations that exceed the expectations of our guests, while
+        fostering a sense of community and contributing to the growth and
+        prosperity of the neighborhoods in which we operate. We strive to
+        continuously innovate and enhance the guest experience through seamless
+        technology, personalized service, and a commitment to sustainability.
+        Our ultimate goal is to create meaningful and unforgettable stays for
+        every guest, making their travels effortless and enjoyable.
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-12">
+      <h2 class="font-bold text-3xl text-gray-800">Business Description</h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Las Casas will offer a range of short-term rental properties, including
+        apartments, condominiums, and houses. All of our properties will be
+        fully furnished and equipped with modern amenities, including high-speed
+        internet, televisions, and fully equipped kitchens. Our properties will
+        also be professionally cleaned and maintained, ensuring that they are
+        always in top condition for our guests. Additionally, we will offer 24/7
+        customer support to assist our guests with any needs or concerns that
+        may arise during their stay. Our target market will be business
+        travelers and tourists, and we will be based in a prime location in the
+        city center to maximize visibility and accessibility.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-16">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
@@ -47,9 +67,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">
-                {teamMemberEntry.data.name}
-              </h2>
+              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>

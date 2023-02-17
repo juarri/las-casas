@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { Icon } from "astro-icon";
+import { Image } from "@astrojs/image/components";
+
+const points = [
+  {
+    title: "Clean",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "home-alt",
+  },
+  {
+    title: "Safe",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "lock",
+  },
+  {
+    title: "Comfortable",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "emoji-satisfied",
+  },
+  {
+    title: "24/7 Guest Services",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "bell",
+  },
+  {
+    title: "Easy Guest Access",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "key-alt",
+  },
+  {
+    title: "Easy Payments",
+    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    icon: "wallet",
+  },
+];
+---
+
+<Layout title="Book">
+  <main>
+    <section class="px-[5vw] md:px-[10vw] py-16">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="mx-auto max-w-lg text-center">
+          <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+            Why Book With Us?
+          </h2>
+          <p class="text-lg mt-4 text-slate-600">
+            We partner with residential and commercial landlords to offer a
+            hassle-free, passive strategy to renting their property.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 my-16 gap-12">
+          {
+            points.map((point) => (
+              <div class="flex gap-4 items-start">
+                <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+                  <Icon name={point.icon} class="invert" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg">{point.title}</h3>
+                  <p class="text-slate-500 mt-2">{point.copy}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <a
+          href=""
+          class="w-fit mx-auto rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
+          Book Stay Now
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
