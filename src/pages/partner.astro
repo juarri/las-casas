@@ -6,49 +6,75 @@ import { Image } from "@astrojs/image/components";
 
 const points = [
   {
-    title: "No parties policy",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "home-alt",
+    title: "No parties policy",
+    points: [],
   },
   {
-    title: "Noise Aware Systems",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "lock",
+    title: "Noise Aware Systems",
+    points: [],
   },
   {
-    title: "No hassle/communication with tenant",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "emoji-satisfied",
+    title: "No hassle/communication with tenant",
+    points: ["No worries about finding qualified tenants"],
   },
   {
-    title: "24/7 Guest Services",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "bell",
+    title: "Risk is low on investment",
+    points: [],
   },
   {
-    title: "Consistent, professional cleaning",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "key-alt",
+    title: "Consistent, professional cleaning",
+    points: [
+      "Pristine property = great business",
+      "With long term tenants you’re not aware of wear & tear until move out day ",
+    ],
   },
   {
+    icon: "wallet",
     title: "Paid on time",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "wallet",
+    points: [],
   },
   {
+    icon: "wallet",
     title: "Guest screening and background check",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "wallet",
+    points: [],
   },
   {
+    icon: "wallet",
     title: "Local staff at every property",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "wallet",
+    points: [],
   },
   {
-    title: "Guest screening and background check",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
     icon: "wallet",
+    title: "Guest screening and background check",
+    points: [],
+  },
+];
+
+const safety = [
+  {
+    icon: "wallet",
+    title: "Security System",
+    points: [],
+  },
+  {
+    icon: "wallet",
+    title: "Indoor and outdoor sensor to monitor noise",
+    points: [],
+  },
+  {
+    icon: "wallet",
+    title: "Smart Lock",
+    points: [],
+  },
+  {
+    icon: "wallet",
+    title: "Guest Screening",
+    points: [],
   },
 ];
 ---
@@ -67,7 +93,9 @@ const points = [
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 my-16 gap-12">
+        <h2 class="mt-16 mb-10 font-bold text-2xl">Landlord Benefits</h2>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 mb-16 gap-12">
           {
             points.map((point) => (
               <div class="flex gap-4 items-start">
@@ -76,7 +104,30 @@ const points = [
                 </div>
                 <div>
                   <h3 class="font-semibold text-lg">{point.title}</h3>
-                  <p class="text-slate-500 mt-2">{point.copy}</p>
+
+                  <ul class="mt-1 list-decimal list-inside space-y-2">
+                    {point.points &&
+                      point.points.map((point) => <li>{point}</li>)}
+                  </ul>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <hr class="my-16" />
+
+        <h2 class="mt-16 mb-10 font-bold text-2xl">Safety/Security</h2>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 mb-16 gap-12">
+          {
+            safety.map((point) => (
+              <div class="flex gap-4 items-start">
+                <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+                  <Icon name={point.icon} class="invert" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg">{point.title}</h3>
                 </div>
               </div>
             ))
@@ -84,7 +135,7 @@ const points = [
         </div>
 
         <a
-          href=""
+          href="/contact"
           class="w-fit mx-auto rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-black text-white hover:bg-gray-800 border-2 border-transparent flex gap-1 items-center justify-center">
           Get In Touch
         </a>

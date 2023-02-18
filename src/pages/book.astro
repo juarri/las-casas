@@ -6,33 +6,39 @@ import { Image } from "@astrojs/image/components";
 
 const points = [
   {
-    title: "Clean",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "24/7 Guest Services",
+    points: [],
     icon: "home-alt",
   },
   {
-    title: "Safe",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "Stocked Amenities",
+    points: [
+      "Self Check In",
+      "Complimentary Wifi",
+      "Fresh Linens",
+      "Hotel Toiletries",
+      "Work Space",
+    ],
     icon: "lock",
   },
   {
-    title: "Comfortable",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "Easy Payment Processing",
+    points: [],
     icon: "emoji-satisfied",
   },
   {
-    title: "24/7 Guest Services",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "Clean and Safe",
+    points: [],
     icon: "bell",
   },
   {
-    title: "Easy Guest Access",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "Comfortable",
+    points: [],
     icon: "key-alt",
   },
   {
-    title: "Easy Payments",
-    copy: "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    title: "Easy Guest Access",
+    points: [],
     icon: "wallet",
   },
 ];
@@ -44,7 +50,7 @@ const points = [
       <div class="max-w-screen-xl mx-auto">
         <div class="mx-auto max-w-lg text-center">
           <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-            Why Book With Us?
+            We Look Forward To Your Stay
           </h2>
           <p class="text-lg mt-4 text-slate-600">
             We partner with residential and commercial landlords to offer a
@@ -61,7 +67,11 @@ const points = [
                 </div>
                 <div>
                   <h3 class="font-semibold text-lg">{point.title}</h3>
-                  <p class="text-slate-500 mt-2">{point.copy}</p>
+
+                  <ol class="list-decimal list-inside">
+                    {point.points &&
+                      point.points.map((point) => <li>{point}</li>)}
+                  </ol>
                 </div>
               </div>
             ))
