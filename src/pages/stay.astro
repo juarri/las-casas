@@ -6,40 +6,34 @@ import { Image } from "@astrojs/image/components";
 
 const points = [
   {
-    title: "24/7 Guest Services",
+    title: "Easy Guest Access",
     points: [],
     icon: "home-alt",
   },
   {
     title: "Stocked Amenities",
-    points: [
-      "Self Check In",
-      "Complimentary Wifi",
-      "Fresh Linens",
-      "Hotel Toiletries",
-      "Work Space",
-    ],
+    points: [],
     icon: "lock",
   },
   {
     title: "Easy Payment Processing",
     points: [],
+    icon: "wallet",
+  },
+  {
+    title: "Professionally Cleaned ",
+    points: [],
     icon: "emoji-satisfied",
   },
   {
-    title: "Clean and Safe",
-    points: [],
-    icon: "bell",
-  },
-  {
-    title: "Comfortable",
+    title: "Safe and Comfortable",
     points: [],
     icon: "key-alt",
   },
   {
-    title: "Easy Guest Access",
+    title: "24/7 Guest Services",
     points: [],
-    icon: "wallet",
+    icon: "bell",
   },
 ];
 ---
@@ -50,11 +44,10 @@ const points = [
       <div class="max-w-screen-xl mx-auto">
         <div class="mx-auto max-w-lg text-center">
           <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-            We Look Forward To Your Stay
+            Book With Us
           </h2>
           <p class="text-lg mt-4 text-slate-600">
-            We partner with residential and commercial landlords to offer a
-            hassle-free, passive strategy to renting their property.
+            We look forward to making your stay memorable
           </p>
         </div>
 
@@ -66,7 +59,7 @@ const points = [
                   <Icon name={point.icon} class="invert" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">{point.title}</h3>
+                  <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
 
                   <ol class="list-decimal list-inside">
                     {point.points &&

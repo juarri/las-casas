@@ -6,42 +6,39 @@ import { Image } from "@astrojs/image/components";
 
 const points = [
   {
-    icon: "home-alt",
-    title: "No parties policy",
+    icon: "verified-user",
+    title: "Guest screening and ID verification",
     points: [],
-  },
-  {
-    icon: "lock",
-    title: "Noise Aware Systems",
-    points: [],
-  },
-  {
-    icon: "emoji-satisfied",
-    title: "No hassle/communication with tenant",
-    points: ["No worries about finding qualified tenants"],
-  },
-  {
-    icon: "bell",
-    title: "Risk is low on investment",
-    points: [],
-  },
-  {
-    icon: "key-alt",
-    title: "Consistent, professional cleaning",
-    points: [
-      "Pristine property = great business",
-      "With long term tenants you’re not aware of wear & tear until move out day ",
-    ],
   },
   {
     icon: "wallet",
     title: "Paid on time",
-    points: [],
+    points: [
+      "Because we are a business, rent will always be paid on time, regardless of the numbers of stays",
+    ],
+  },
+  {
+    icon: "emoji-satisfied",
+    title: "Million dollar insurance policy",
+    points: ["No worries about finding qualified tenants"],
+  },
+  {
+    icon: "chat-lines",
+    title: "No hassle/ communication with tenant",
+    points: ["Never worry about finding qualified tenants"],
+  },
+  {
+    icon: "key-alt",
+    title: "Risk is low on investment",
+    points: ["Usually sign long-term leases (2-4 years)"],
   },
   {
     icon: "wallet",
-    title: "Guest screening and background check",
-    points: [],
+    title: "Consistent, professional cleaning",
+    points: [
+      "Pristine = great business",
+      "With long term tenants you’re not aware of wear and tear until move out day = more time & money needed to rent out to next tenant",
+    ],
   },
   {
     icon: "wallet",
@@ -50,30 +47,39 @@ const points = [
   },
   {
     icon: "wallet",
-    title: "Guest screening and background check",
-    points: [],
+    title: "Damage control",
+    points: [
+      "Damages fixed immediately",
+      "STR tenants aren’t home often (less traffic on property)",
+      "Don’t have to worry about care of your property",
+      "STR is easier on property",
+      "Less liability",
+      "Beautifully maintained",
+      "Regular inspections and maintenance",
+    ],
   },
+  ,
 ];
 
 const safety = [
   {
-    icon: "wallet",
+    icon: "lock",
     title: "Security System",
     points: [],
   },
   {
-    icon: "wallet",
+    icon: "sound-low",
     title: "Indoor and outdoor sensor to monitor noise",
     points: [],
   },
   {
-    icon: "wallet",
+    icon: "key-alt",
     title: "Smart Lock",
     points: [],
   },
   {
-    icon: "wallet",
-    title: "Guest Screening",
+    icon: "verified-user",
+    title: "Guest Screening and ID Verification",
     points: [],
   },
 ];
@@ -95,7 +101,7 @@ const safety = [
 
         <h2 class="mt-16 mb-10 font-bold text-2xl">Landlord Benefits</h2>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 mb-16 gap-12">
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 mb-16 gap-12">
           {
             points.map((point) => (
               <div class="flex gap-4 items-start">
@@ -103,9 +109,9 @@ const safety = [
                   <Icon name={point.icon} class="invert" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">{point.title}</h3>
+                  <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
 
-                  <ul class="mt-1 list-decimal list-inside space-y-2">
+                  <ul class="mt-1 list-disc list-inside space-y-2">
                     {point.points &&
                       point.points.map((point) => <li>{point}</li>)}
                   </ul>
@@ -127,7 +133,7 @@ const safety = [
                   <Icon name={point.icon} class="invert" />
                 </div>
                 <div>
-                  <h3 class="font-semibold text-lg">{point.title}</h3>
+                  <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
                 </div>
               </div>
             ))

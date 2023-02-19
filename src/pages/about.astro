@@ -4,7 +4,6 @@ import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 
-
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
@@ -19,13 +18,15 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <h2 class="font-bold text-3xl text-gray-800">Mission Statement</h2>
       <p class="text-lg leading-relaxed text-slate-500">
         Our mission is to provide safe, comfortable, and affordable short-term
-        rental accommodations that exceed the expectations of our guests, while
-        fostering a sense of community and contributing to the growth and
-        prosperity of the neighborhoods in which we operate. We strive to
-        continuously innovate and enhance the guest experience through seamless
-        technology, personalized service, and a commitment to sustainability.
-        Our ultimate goal is to create meaningful and memorable stays for every
-        guest, making their travels effortless and enjoyable.
+        rental accommodations that exceed the expectations of our guests,
+        primarily but not limited to, traveling nurses, business professionals,
+        insurance claimants, and vacation travelers, while fostering a sense of
+        community and contributing to the growth and prosperity of the
+        neighborhoods in which we operate. We strive to continuously innovate
+        and enhance the guest experience through seamless technology,
+        personalized service, and a commitment to sustainability. Our ultimate
+        goal is to create meaningful and memorable stays for every guest, making
+        their travels effortless and enjoyable.
       </p>
     </div>
 
@@ -34,16 +35,15 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
       <p class="text-lg leading-relaxed text-slate-500">
         Las Casas will offer a range of short-term rental properties, including
         apartments, condominiums, and houses. All of our properties will be
-        fully furnished and equipped with modern amenities, including high-speed
-        internet, televisions, and kitchens stocked with basic essentials. Our
-        properties will also be professionally cleaned and maintained, ensuring
-        that they are always in top condition for our guests. Additionally, we
-        will offer 24/7 delete customer support to assist our guests with any
-        needs or concerns that may arise during their stay. Our target market
-        will be business travelers and tourists, and we will be based in a prime
+        uniquely furnished and equipped with modern amenities, including
+        high-speed internet, televisions, and kitchens stocked with basic essentials. Our properties will also be professionally cleaned and
+        maintained, ensuring that they are always in top condition for our
+        guests. Additionally, we will offer 24/7 support to assist our guests
+        with any needs or concerns that may arise during their stay. Our target
+        market will be traveling nurses, business professionals, insurance
+        claimants, and vacation travelers, and we will be based in a prime
         location in the city center to maximize visibility and accessibility.
       </p>
     </div>
-
   </Container>
 </Layout>
