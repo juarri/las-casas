@@ -4,6 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon";
 import { Image } from "@astrojs/image/components";
 
+import keypadImage from "images/nest.jpg";
+import soundImage from "images/noiseaware.png";
+import lockImage from "images/yale.jpg";
+import screeningImage from "images/screening.png";
+
 const points = [
   {
     icon: "verified-user",
@@ -66,21 +71,25 @@ const safety = [
     icon: "lock",
     title: "Security System",
     points: [],
+    image: keypadImage,
   },
   {
     icon: "sound-low",
     title: "Indoor and outdoor sensor to monitor noise",
     points: [],
+    image: soundImage,
   },
   {
     icon: "key-alt",
     title: "Smart Lock",
     points: [],
+    image: lockImage,
   },
   {
     icon: "verified-user",
     title: "Guest Screening and ID Verification",
     points: [],
+    image: screeningImage,
   },
 ];
 ---
@@ -134,6 +143,7 @@ const safety = [
                 </div>
                 <div>
                   <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
+                  <Image src={point.image} alt="" class="mt-5" />
                 </div>
               </div>
             ))

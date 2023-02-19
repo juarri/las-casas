@@ -3142,7 +3142,7 @@ packages:
 
   /prettier-plugin-astro/0.7.1:
     resolution: {integrity: sha512-ySeyXHIXNZpbqZCcj8eoWl6z2UDHYl6DPgN7z9E1HElG8aVlC2WQNjfcpcSBuF4jwwo+HHi44pun/Hlr+h8OsA==}
-    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.13.0'}
+    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     requiresBuild: true
     dependencies:
       '@astrojs/compiler': 0.31.3
