@@ -41,7 +41,7 @@ const points = [
     icon: "trash",
     title: "Consistent, professional cleaning",
     points: [
-      "Pristine = great business",
+      "Pristine Properties = Great Business",
       "With long term tenants you’re not aware of wear and tear until move out day = more time & money needed to rent out to next tenant",
     ],
   },
@@ -96,7 +96,7 @@ const safety = [
 
 <Layout title="Book">
   <main>
-    <section class="px-[5vw] md:px-[10vw] py-16">
+    <section class="px-[5vw] md:px-[10vw] py-8">
       <div class="max-w-screen-xl mx-auto">
         <div class="mx-auto max-w-lg text-center">
           <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
@@ -108,9 +108,28 @@ const safety = [
           </p>
         </div>
 
-        <h2 class="mt-16 mb-10 font-bold text-2xl">Landlord Benefits</h2>
+        <h2 class="mt-16 mb-10 font-bold text-2xl">Safety/Security</h2>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 mb-16 gap-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          {
+            safety.map((point) => (
+              <div class="flex gap-4 items-start">
+                <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 ssrink-0">
+                  <Icon name={point.icon} class="invert" />
+                </div>
+                <div>
+                  <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
+                  <Image src={point.image} alt="" class="mt-5" />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+
+        <h2 class="mt-12 mb-10 font-bold text-2xl">Landlord Benefits</h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 mb-16 gap-12">
           {
             points.map((point) => (
               <div class="flex gap-4 items-start">
@@ -124,26 +143,6 @@ const safety = [
                     {point.points &&
                       point.points.map((point) => <li>{point}</li>)}
                   </ul>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-
-        <hr class="my-16" />
-
-        <h2 class="mt-16 mb-10 font-bold text-2xl">Safety/Security</h2>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 mb-16 gap-12">
-          {
-            safety.map((point) => (
-              <div class="flex gap-4 items-start">
-                <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 ssrink-0">
-                  <Icon name={point.icon} class="invert" />
-                </div>
-                <div>
-                  <h3 class="mt-1.5 font-semibold text-lg">{point.title}</h3>
-                  <Image src={point.image} alt="" class="mt-5" />
                 </div>
               </div>
             ))
