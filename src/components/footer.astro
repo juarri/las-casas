@@ -2,26 +2,43 @@
 import { Icon } from "astro-icon";
 
 import Logo from "@components/logo.astro";
+
+const socials = [
+  {
+    icon: "phone",
+    href: "tel:+16194311171",
+  },
+  {
+    icon: "mail",
+    href: "mailto:info@lascasasstr.com",
+  },
+  {
+    icon: "instagram",
+    href: "https://www.instagram.com/lascasas.str/?igshid=YmMyMTA2M2Y=",
+  },
+];
 ---
 
 <footer class="bg-[#fffbf4]">
-  <div class="max-w-screen-lg mx-auto py-10 border-t">
-    <div class="grid grid-cols-3 items-center">
+  <div class="max-w-screen-lg py-10 mx-auto border-t">
+    <div class="grid items-center grid-cols-3">
       <Logo />
 
       <p class="text-xs text-center">Copyright © 2023 LAS CASAS STR LLC</p>
 
-      <div class="flex gap-6 justify-end">
-        <div class="border rounded-full border-black">
-          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
-        </div>
-        <div class="border rounded-full border-black">
-          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
-        </div>
-        <div class="border rounded-full border-black">
-          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
-        </div>
-      </div>
+      <ul class="flex justify-end gap-6">
+        {
+          socials.map((social) => (
+            <li>
+              <a href={social.href}>
+                <div class="border rounded-full border-neutral-600">
+                  <Icon name={social.icon} class="w-5 m-1.5" />
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </footer>

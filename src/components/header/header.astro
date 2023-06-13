@@ -5,7 +5,6 @@ import Dropdown from "./dropdown.astro";
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 
-import logo from "../../images/las-casas-logo.png";
 import Logo from "@components/logo.astro";
 
 const menuitems = [
@@ -34,7 +33,7 @@ const menuitems = [
 
 <header class="bg-[#fffbf4] relative">
   <Astronav>
-    <div class="max-w-screen-xl mx-auto py-6 border-t-2 px-6">
+    <div class="max-w-screen-xl px-6 py-6 mx-auto border-t-2">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-between w-full lg:w-auto">
           <a href="/">
@@ -47,7 +46,7 @@ const menuitems = [
           </div>
         </div>
         <MenuItems class="hidden w-full mt-8 lg:w-auto lg:flex lg:mt-0">
-          <ul class="flex flex-col items-center lg:flex-row lg:gap-3 text-sm">
+          <ul class="flex flex-col items-center text-sm lg:flex-row lg:gap-3">
             {
               menuitems.map((item, index) => (
                 <li>

@@ -12,30 +12,32 @@ import Logos from "@components/logos.astro";
 import Roi from "@components/roi.astro";
 
 import heroImage from "assets/images/hero.jpg";
+import heroImage2 from "assets/images/hero2.jpg";
+import heroImage3 from "assets/images/hero3.jpg";
 import aboutImage from "assets/images/about.jpg";
 ---
 
 <Layout title="">
   <Container>
     <!-- Hero -->
-    <section class="relative bg-[#fffbf4]">
+    <section class="relative overflow-x-clip">
       <div class="mx-auto max-w-screen-2xl lg:flex">
         <!-- Content -->
         <div
-          class="px-6 relative lg:max-w-[60%] py-10 self-center lg:px-16 z-10">
+          class="px-6 relative lg:max-w-[60%] pt-10 self-center lg:px-16 z-10">
           <h1
             class="mb-8 text-4xl sm:text-6xl lg:text-7xl animate__fadeInUp animate__animated">
             Collection of quality furnished rental properties
           </h1>
           <p
             class="max-w-xl mb-12 font-light text-neutral-500 text-lg sm:text-xl lg:text-2xl !leading-relaxed animate__fadeInUp animate__animated">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-            voluptates quae ratione! Voluptas facere iusto quaerat.
+            Settle into one of our rental properties and find everything you
+            need to make yourself truly at home, ensuring your utmost comfort.
           </p>
           <div>
             <a
               href="#"
-              class="inline-flex px-6 py-3 text-white bg-black animate__fadeInUp animate__animated">
+              class="inline-flex px-6 py-4 text-white bg-black animate__fadeIn animate__animated">
               Book Your Stay</a
             >
             <a href="/contact"></a>
@@ -45,15 +47,19 @@ import aboutImage from "assets/images/about.jpg";
         <!-- Image Desktop -->
         <div
           class="hidden lg:block top-0 relative w-full lg:max-w-[30%] lg:justify-self-end lg:self-center lg:h-full">
-          <Image src={aboutImage} alt="Home" class="w-full" />
+          <Image
+            src={heroImage}
+            alt="Home"
+            class="w-full animate__animated animate__fadeInRight animate__slow"
+          />
           <div
-            class="absolute bottom-[10%] left-[-25%] w-60 h-60 xl:w-80 xl:h-80 xl:left-[-33%]">
+            class="absolute bottom-[10%] left-[-25%] w-60 h-60 xl:w-80 xl:h-80 xl:left-[-33%] animate__animated animate__fadeIn animate__slow animate__delay-1s">
             <div
-              class="absolute w-full h-full scale-105 bg-emerald-800 rounded-full left-5">
+              class="absolute w-full h-full scale-105 rounded-full bg-[#ffcc4d] left-4">
             </div>
 
             <Image
-              src={aboutImage}
+              src={heroImage2}
               alt="Home"
               class="relative w-full rounded-full aspect-square"
             />
@@ -61,47 +67,51 @@ import aboutImage from "assets/images/about.jpg";
         </div>
 
         <!-- Image Mobile -->
-        <!-- <div class="lg:hidden h-80">
-          <Image src={aboutImage} alt="Home" class="w-full h-full" />
-          <div class="absolute bottom-[25%] right-[-15%] w-64 h-64">
+        <div class="lg:hidden h-80">
+          <Image
+            src={heroImage}
+            alt="Home"
+            class="w-full h-full object-cover mt-24 scale-x-[-1]"
+          />
+          <div class="absolute top-[22.5%] right-[-10%] w-64 h-64">
             <div
-              class="absolute w-full h-full scale-105 bg-yellow-500 rounded-full left-5">
+              class="absolute w-full h-full scale-105 bg-[#ffcc4d] rounded-full left-5">
             </div>
 
             <Image
-              src={aboutImage}
+              src={heroImage2}
               alt="Home"
-              class="relative w-full rounded-full aspect-square"
-            />
-          </div>
-        </div> -->
-      </div>
-
-      <div
-        class="mx-auto max-w-screen-xl px-16 py-24 grid md:grid-cols-2 gap-12 md:gap-0">
-        <div class="relative w-11/12 grid items-center">
-          <Image
-            src={aboutImage}
-            alt="Home"
-            class="relative w-full rounded-full h-56"
-          />
-
-          <div class="absolute -right-12 z-10 bg-emerald-800 rounded-full">
-            <Icon
-              pack="feather"
-              name="external-link"
-              class="w-6 m-10 text-white"
+              class="relative w-full rounded-full aspect-square object-cover scale-x-[-1]"
             />
           </div>
         </div>
+      </div>
 
-        <div class="grid items-center pl-4 md:ml-12">
+      <div
+        class="grid max-w-screen-xl gap-12 px-16 py-24 mx-auto md:grid-cols-2 md:gap-0">
+        <div
+          class="relative grid items-center w-11/12 animate__animated animate__fadeInUp animate__slow">
+          <Image
+            src={heroImage3}
+            alt="Home"
+            class="relative object-cover w-full h-56 rounded-full"
+          />
+
+          <div class="absolute z-10 rounded-full -right-12 bg-[#ffcc4d]">
+            <Icon name="link" class="w-6 m-10 text-white" />
+          </div>
+        </div>
+
+        <div class="grid items-center sm:pl-4 md:ml-12">
           <div class="relative flex items-center">
-            <div class="w-px h-32 bg-black mr-8 block"></div>
+            <div
+              class="block w-px h-32 bg-black sm:mr-8 animate__animated animate__fadeIn animate__slow animate__delay-1s">
+            </div>
 
-            <p class="text-3xl text-gray-600">
-              We're an award winning interior design agency. We regard every
-              inch of your space.
+            <p
+              class="text-3xl text-gray-600 animate__animated animate__fadeInRight animate__slow">
+              We prioritize both the aesthetics and amenities of our homes, so
+              our guests can persist their lifestyle.
             </p>
           </div>
         </div>
@@ -109,67 +119,61 @@ import aboutImage from "assets/images/about.jpg";
     </section>
 
     <!-- <Amenities /> -->
-    <section class="bg-black text-neutral-400 px-12">
+    <section class="relative px-12 bg-neutral-900 text-neutral-400">
       <div class="max-w-screen-xl py-16 mx-auto sm:py-20">
         <div class="grid gap-12 lg:grid-cols-2 sm:gap-16 lg:gap-20">
           <div class="self-center">
             <h2 class="mb-4 text-5xl text-white sm:text-6xl sm:mb-6">
-              A design so unique, it was created for you
+              Stay at home away from home, we've got what you need
             </h2>
-            <p class="leading-relaxed text-lg">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-              illo a accusamus tempore maxime quibusdam dignissimos eaque
-              adipisci totam exercitationem.
+            <p
+              class="max-w-xl mb-12 font-light text-neutral-400 text-lg sm:text-xl lg:text-2xl !leading-relaxed animate__fadeInUp animate__animated">
+              From high-speed internet to televisions, and kitchens stocked with
+              essential supplies, we ensure that every aspect of your stay is
+              equipped to meet your needs.
             </p>
           </div>
 
           <div>
             <ul class="flex flex-col gap-8">
-              <li>
-                <div class="flex items-center gap-12">
-                  <div>
-                    <h3 class="mb-2 text-2xl text-white">Archetcture</h3>
-                    <p class="leading-relaxed">
-                      Lorem ipsum dolor sit, amet consec tetur adipisicing elit.
-                      Voluptatum et aperiam eaque.
-                    </p>
-                  </div>
+              {
+                [
+                  {
+                    icon: "bookmark-book",
+                    topic: "Office Space",
+                    details:
+                      "Experience the convenience of a dedicated office space in our home rentals, allowing you to balance work and relaxation.",
+                  },
+                  {
+                    icon: "sofa",
+                    topic: "Relaxation",
+                    details:
+                      "Find a peaceful retreat in our rental homes, providing a serene environment where you can unwind and recharge in comfort.",
+                  },
+                  {
+                    icon: "modern-tv",
+                    topic: "Entertainment",
+                    details:
+                      "Our rental homes provide televisions and board games, ensuring there's always something enjoyable to keep you entertained during your stay.",
+                  },
+                ].map((topic) => (
+                  <li>
+                    <div class="flex items-center gap-12 sm:gap-16 lg:gap-20">
+                      <div>
+                        <h3 class="mb-2 text-2xl text-white">{topic.topic}</h3>
+                        <p class="leading-relaxed">{topic.details}</p>
+                      </div>
 
-                  <div class="bg-neutral-900 rounded-tr-3xl">
-                    <Icon pack="iconoir" name="home-alt" class="w-5 m-4" />
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center gap-12">
-                  <div>
-                    <h3 class="mb-2 text-2xl text-white">Archetcture</h3>
-                    <p class="leading-relaxed">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Voluptatum et aperiam eaque.
-                    </p>
-                  </div>
-
-                  <div class="bg-neutral-900 rounded-tr-3xl">
-                    <Icon pack="iconoir" name="home-alt" class="w-5 m-4" />
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="flex items-center gap-12">
-                  <div>
-                    <h3 class="mb-2 text-2xl text-white">Archetcture</h3>
-                    <p class="leading-relaxed">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Voluptatum et aperiam eaque.
-                    </p>
-                  </div>
-
-                  <div class="bg-neutral-900 rounded-br-3xl">
-                    <Icon pack="iconoir" name="home-alt" class="w-5 m-4" />
-                  </div>
-                </div>
-              </li>
+                      <div class="rounded-full bg-neutral-950">
+                        <Icon
+                          name={topic.icon}
+                          class="w-5 m-4 text-neutral-400"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -178,66 +182,53 @@ import aboutImage from "assets/images/about.jpg";
 
     <!-- About Us -->
     <section class="py-24 bg-[#fffbf4]">
-      <div class="mx-auto max-w-screen-xl">
+      <div class="max-w-screen-xl mx-auto">
         <div class="grid gap-16 md:grid-cols-2 md:gap-0">
           <!-- Image -->
           <Image
             src={aboutImage}
             alt="Home"
-            class="self-center w-full h-full mx-auto px-6 sm:px-0 sm:pr-24 lg:pr-32"
+            class="self-center w-full h-[100%] mx-auto px-6 sm:px-0 sm:pr-24 lg:pr-32 object-cover"
           />
 
           <!-- Content -->
-          <div class="flex flex-col justify-center gap-12 px-6 pr-12">
+          <div class="flex flex-col justify-center gap-12 px-6 pr-12 lg:pr-8">
             <!-- Top -->
             <div class="">
               <h2 class="mb-4 font-bold">About Us</h2>
               <p class="text-xl !leading-snug sm:text-3xl lg:text-4xl">
-                Our journey started with a small step we build for our house
-                which inspired many people to build comfortable and safe house.
+                We work with landlords, providing an efficient service for
+                passive income through property rentals.
               </p>
             </div>
 
             <!-- Bottom -->
-            <div class="grid grid-cols-2 gap-6">
-              <div>
-                <Icon pack="iconoir" name="home-alt" class="w-6 mb-5" />
-                <h3 class="mb-3 text-xl">Detail Building</h3>
-                <p class="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </div>
-
-              <div>
-                <Icon pack="iconoir" name="group" class="w-6 mb-5" />
-                <h3 class="mb-3 text-xl">Detail Building</h3>
-                <p class="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </div>
-
-              <div>
-                <Icon pack="iconoir" name="group" class="w-6 mb-5" />
-                <h3 class="mb-3 text-xl">Detail Building</h3>
-                <p class="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </div>
-
-              <div>
-                <Icon pack="iconoir" name="group" class="w-6 mb-5" />
-                <h3 class="mb-3 text-xl">Detail Building</h3>
-                <p class="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </div>
+            <div class="grid grid-cols-2 gap-8 gap-y-10">
+              {
+                [
+                  {
+                    heading: "Detail Oriented",
+                    paragraph:
+                      "We prioritize attention to detail, ensuring a seamless and exceptional experience with our company.",
+                  },
+                  {
+                    heading: "Time Efficient",
+                    paragraph:
+                      "Our company maximizes efficiency, ensuring that your time is utilized effectively throughout our services.",
+                  },
+                ].map((group) => (
+                  <div>
+                    <h3 class="mb-3 text-xl">{group.heading}</h3>
+                    <p class="text-gray-600">{group.paragraph}</p>
+                  </div>
+                ))
+              }
             </div>
-
             <!-- Button -->
             <a
               href="/about"
-              class="inline-flex px-6 py-3 text-white bg-black max-w-fit"
-              >About Us</a
+              class="inline-flex px-6 py-4 text-white bg-black max-w-fit"
+              >More About Us</a
             >
           </div>
         </div>
@@ -245,24 +236,32 @@ import aboutImage from "assets/images/about.jpg";
     </section>
 
     <!-- Kappa -->
-    <section class="bg-black text-white px-12 lg:px-24 py-24 relative">
-      <div class="max-w-screen-2xl mx-auto">
+    <section class="relative px-12 py-24 text-white bg-neutral-900 lg:px-24">
+      <div class="mx-auto max-w-screen-2xl">
         <div>
           <h2
-            class="text-3xl lg:text-6xl font-light text-center mb-20 max-w-screen-lg mx-auto">
-            Three simple steps, <br />to get easy passive income
+            class="max-w-screen-lg mx-auto text-4xl font-light text-center lg:text-6xl">
+            Three simple steps, <br class="hidden sm:block" />to get easy
+            passive income
           </h2>
 
-          <ol class="flex flex-col gap-12 lg:flex-row justify-evenly">
+          <ol
+            class="flex flex-col justify-center gap-12 mt-20 lg:flex-row lg:justify-evenly">
             {
               [
-                { number: "01", action: "Sign Papers" },
-                { number: 02, action: "Property Renovation" },
-                { step: "03", action: "Collect Income" },
+                { number: "01", action: "Residential Lease" },
+                { number: "02", action: "Property Renovation" },
+                { number: "03", action: "Collect Income" },
               ].map((step) => (
-                <li class="flex items-center gap-4 border px-8 py-4 rounded-full lg:min-w-max lg:relative">
-                  <p class="font-bold text-4xl">{step.number}</p>
-                  <p class="text-xl">{step.action}</p>
+                <li>
+                  <a href="/partner">
+                    <div class="self-center px-8 py-4 transition-colors border rounded-full w-max hover:bg-neutral-950">
+                      <div class="flex items-center justify-center gap-4">
+                        <p class="text-4xl font-bold">{step.number}</p>
+                        <p class="text-xl">{step.action}</p>
+                      </div>
+                    </div>
+                  </a>
                 </li>
               ))
             }
@@ -273,14 +272,14 @@ import aboutImage from "assets/images/about.jpg";
 
     <!-- We Have What Your Looking For -->
     <section class="relative py-16 sm:py-24 bg-[#f8ebd6]">
-      <div class="mx-auto max-w-screen-lg px-6">
+      <div class="max-w-screen-lg px-6 mx-auto">
         <div class="flex items-center">
-          <h2 class="text-6xl w-3/4">We have what you're looking for</h2>
+          <h2 class="w-3/4 text-6xl">Have any questions?</h2>
 
           <a
-            href="#"
-            class="inline-flex px-6 py-3 text-white bg-black justify-self-start w-fullmy">
-            Book your stay</a
+            href="/faq"
+            class="inline-flex px-6 py-3 text-white bg-black min-w-fit justify-self-start">
+            Explore our FAQ</a
           >
         </div>
       </div>
@@ -289,19 +288,17 @@ import aboutImage from "assets/images/about.jpg";
     </section>
 
     <!-- Contact Us -->
-    <section class="py-16 sm:py-28 bg-[#fffbf4]">
+    <section class="py-16 sm:py-28 bg-[#fffbf4] sm:pb-24">
       <div
-        class="mx-auto max-w-3xl flex flex-col items-center px-6 text-center">
-        <h2 class="text-4xl sm:text-5xl mb-6">
-          Every stay should be memorable
-        </h2>
-        <p class="text-gray-600 mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati,
-          sapiente nemo eum tenetur, nostrum eos vel ut expedita iusto ad,
-          ratione.
+        class="flex flex-col items-center max-w-3xl px-6 mx-auto text-center">
+        <h2 class="mb-6 text-4xl sm:text-5xl">Get in touch with us</h2>
+        <p class="mb-8 text-lg text-gray-600">
+          Feel free to reach out to us anytime if you require assistance or have
+          any questions. Our team is available round the clock, ready to provide
+          you with the support you need.
         </p>
-        <a href="#" class="inline-flex px-6 py-3 text-white bg-black">
-          Get in touch</a
+        <a href="/contact" class="inline-flex px-6 py-3 text-white bg-black">
+          Contact us</a
         >
       </div>
     </section>
