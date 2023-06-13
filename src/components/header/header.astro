@@ -1,6 +1,4 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
-
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import Dropdown from "./dropdown.astro";
 
@@ -8,17 +6,9 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 
 import logo from "../../images/las-casas-logo.png";
+import Logo from "@components/logo.astro";
 
 const menuitems = [
-  // {
-  //   title: "Features",
-  //   path: "#",
-  //   children: [
-  //     { title: "Action", path: "#" },
-  //     { title: "Another action", path: "#" },
-  //     { title: "Dropdown Submenu", path: "#" },
-  //   ],
-  // },
   {
     title: "About",
     path: "/about",
@@ -42,45 +32,36 @@ const menuitems = [
 ];
 ---
 
-<Container>
-  <header
-    class="flex flex-col lg:flex-row justify-between items-center my-7 sm:my-8">
-    <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg">
-          <Image src={logo} alt="Las Casas Logo" class="w-20" />
-        </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-5 h-5 text-gray-800" />
-        </div>
-      </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-8 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3 items-center">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
+<header class="bg-[#fffbf4] relative">
+  <Astronav>
+    <div class="max-w-screen-xl mx-auto py-6 border-t-2 px-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between w-full lg:w-auto">
+          <a href="/">
+            <!-- <Image src={logo} alt="Las Casas Logo" class="w-20" /> -->
 
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
-        </ul>
-      </MenuItems>
-    </Astronav>
-  </header>
-</Container>
+            <Logo />
+          </a>
+          <div class="block lg:hidden">
+            <MenuIcon class="w-5 h-5 text-gray-800" />
+          </div>
+        </div>
+        <MenuItems class="hidden w-full mt-8 lg:w-auto lg:flex lg:mt-0">
+          <ul class="flex flex-col items-center lg:flex-row lg:gap-3 text-sm">
+            {
+              menuitems.map((item, index) => (
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex py-2 text-gray-600 lg:px-3 hover:text-gray-900">
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </MenuItems>
+      </div>
+    </div>
+  </Astronav>
+</header>

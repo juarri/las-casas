@@ -1,7 +1,27 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500 leading-tighter">
-    Copyright © {new Date().getFullYear()} LAS CASAS STR LLC
-    <br></br>All rights reserved.
-  </p>
-</footer>
+---
+import { Icon } from "astro-icon";
 
+import Logo from "@components/logo.astro";
+---
+
+<footer class="bg-[#fffbf4]">
+  <div class="max-w-screen-lg mx-auto py-10 border-t">
+    <div class="grid grid-cols-3 items-center">
+      <Logo />
+
+      <p class="text-xs text-center">Copyright © 2023 LAS CASAS STR LLC</p>
+
+      <div class="flex gap-6 justify-end">
+        <div class="border rounded-full border-black">
+          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
+        </div>
+        <div class="border rounded-full border-black">
+          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
+        </div>
+        <div class="border rounded-full border-black">
+          <Icon pack="iconoir" name="instagram" class="w-5 m-1.5" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

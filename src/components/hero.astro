@@ -4,52 +4,55 @@ import { Picture } from "@astrojs/image/components";
 
 import Link from "@components/ui/link.astro";
 
-import heroImage from "images/oceanview.jpg";
+import heroImage from "images/hero.jpg";
 ---
 
-<section
-  class="gap-16 grid lg:grid-cols-2 place-items-center pt-4 pb-8 md:pb-24">
-  <div class="w-full order-1">
-    <Picture
-      src={heroImage}
-      alt="Ocean view from back porch"
-      widths={[200, 400, 600]}
-      aspectRatio="4:3"
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-      class="w-full"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Enjoy a memorable stay with us
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Make yourself comfortable in one of our rentals, complete with everything
-      you may need to make you feel at home. Creating memories for both business
-      and destination travelers.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="/"
-        target="_blank"
-        class="flex gap-2 items-center justify-center"
-        rel="noopener">
-        <Icon class="invert w-5 h-5" name="calendar-plus" />
-        Book Rental
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="/contact"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="w-5 h-5" name="peace-hand" />
-        Get In Touch
-      </Link>
+<section class="isolate relative mx-auto">
+  <div
+    class="w-[90%] z-10 relative px-5 py-20 mx-auto max-w-8xl gap-16 grid lg:grid-cols-2 place-items-center">
+    <div class="relative">
+      <div class="absolute right-0 w-4/5 h-full bg-pink-50 z-0"></div>
+
+      <Picture
+        src={heroImage}
+        alt="Ocean view from back porch"
+        widths={[200, 400, 600]}
+        sizes="(max-width: 800px) 100vw, 620px"
+        loading="eager"
+        format="avif"
+        class="relative mx-auto lg:max-w-[80%] z-10 py-20"
+      />
+    </div>
+
+    <div class="z-10">
+      <h1
+        class="text-5xl lg:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+        Find a place <br /> you'd love to stay
+      </h1>
+      <p class="text-lg mt-8 text-slate-600 max-w-xl lg:text-xl">
+        Make yourself comfortable in one of our rentals, complete with
+        everything you may need to feel at home.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <Link
+          href="/"
+          target="_blank"
+          class="flex gap-2 items-center justify-center"
+          rel="noopener">
+          <Icon class="invert w-5 h-5" name="calendar-plus" />
+          Book Stay
+        </Link>
+        <Link
+          size="lg"
+          style="outline"
+          rel="noopener"
+          href="/contact"
+          class="flex gap-1 items-center justify-center"
+          target="_blank">
+          <Icon class="w-5 h-5" name="peace-hand" />
+          Get In Touch
+        </Link>
+      </div>
     </div>
   </div>
 </section>
