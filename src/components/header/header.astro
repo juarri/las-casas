@@ -9,6 +9,10 @@ import Logo from "@components/logo.astro";
 
 const menuitems = [
   {
+    title: "Book",
+    path: "/book",
+  },
+  {
     title: "About",
     path: "/about",
   },
@@ -34,16 +38,14 @@ const menuitems = [
 <header class="bg-[#fffbf4] relative">
   <Astronav>
     <div class="max-w-screen-xl px-6 py-6 mx-auto border-t-2">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center justify-between w-full lg:w-auto">
-          <a href="/">
-            <!-- <Image src={logo} alt="Las Casas Logo" class="w-20" /> -->
+      <div class="flex flex-wrap items-center justify-between w-full lg:w-auto">
+        <a href="/">
+          <!-- <Image src={logo} alt="Las Casas Logo" class="w-20" /> -->
 
-            <Logo />
-          </a>
-          <div class="block lg:hidden">
-            <MenuIcon class="w-5 h-5 text-gray-800" />
-          </div>
+          <Logo />
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-5 h-5 text-gray-800" />
         </div>
         <MenuItems class="hidden w-full mt-8 lg:w-auto lg:flex lg:mt-0">
           <ul class="flex flex-col items-center text-sm lg:flex-row lg:gap-3">
