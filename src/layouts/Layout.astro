@@ -2,6 +2,7 @@
 import { SEO } from "astro-seo";
 import Header from "@components/header/header.astro";
 import Footer from "@components/footer.astro";
+import "../styles/global.css";
 // import "@fontsource/inter/variable.css";
 import "@fontsource/poppins";
 import "animate.css";
@@ -46,12 +47,9 @@ const makeTitle = title
     />
 
     <script
-      type="text/javascript"
       src="https://platform.hostfully.com/assets/js/pikaday.js"></script>
 
-    <script
-      type="text/javascript"
-      src="https://platform.hostfully.com/assets/js/leadCaptureWidget_2.0.js"
+    <script src="https://platform.hostfully.com/assets/js/leadCaptureWidget_2.0.js"
     ></script>
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
@@ -87,7 +85,7 @@ const makeTitle = title
     </style>
 
     <script>
-      var widget = new Widget(
+      var widget = new widget(
         "leadWidget",
         "f0343a25-3713-4e40-84dc-3ee8d7266fcb",
         {
